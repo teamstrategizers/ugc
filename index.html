@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>#MyFlipkartFlip Challenge</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      font-family: system-ui, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .phone {
+      width: 360px;
+      height: 640px;
+      background: #111;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .scene {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
+    .scene1 { background: url('https://via.placeholder.com/360x640/222/fff?text=Expensive+Look') center/cover; }
+    .scene2 { background: url('https://via.placeholder.com/360x640/0055ff/fff?text=₹999+Flipkart+Look') center/cover; clip-path: inset(0 round 0); }
+    .scene3 { background: #000; font-size: 16px; flex-direction: column; }
+    .overlay-text {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .progress {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .bar {
+      width: 100%;
+      height: 100%;
+      background: #ffd84d;
+      animation: play 5s linear forwards;
+    }
+    @keyframes play {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .sound {
+      position: absolute;
+      bottom: 50px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+    }
+    .cta {
+      position: absolute;
+      bottom: 70px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+      color: #ffd84d;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!-- Scene 1 -->
+    <div class="scene scene1">
+      <div class="overlay-text">Expected</div>
+    </div>
+
+    <!-- Scene 2 -->
+    <div class="scene scene2" style="animation: fadein 1s 1s forwards;">
+      <div class="overlay-text">Reality (₹999 Flip)</div>
+    </div>
+
+    <!-- Scene 3 -->
+    <div class="scene scene3" style="animation: fadein 1s 4s forwards;">
+      <div class="overlay-text">Product codes in comments</div>
+      <div class="cta">Join the challenge 👉 #MyFlipkartFlip</div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress"><div class="bar"></div></div>
+
+    <!-- Sound icon -->
+    <div class="sound">🔊</div>
+  </div>
+
+  <style>
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .scene2, .scene3 { opacity: 0; }
+  </style>
+</body>
+</html>
